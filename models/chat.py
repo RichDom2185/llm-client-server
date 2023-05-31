@@ -30,11 +30,14 @@ class ChatClient(Observer, Observable):
     def notify(self) -> None:
         if not self.message_history:
             return
-        for observer in self.observers:
+        print("Notifying with payload:",
+              self.message_history[-1])  # TODO: Remove
+        for observer in self.message_handlers:
             observer.on_update(self.message_history[-1])
 
     # Overridden methods from Observer
     # (for receiving response messages)
 
     def on_update(self, payload) -> None:
+        print("Received payload:", payload)  # TODO: Remove
         pass
