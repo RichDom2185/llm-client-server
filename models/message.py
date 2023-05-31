@@ -22,6 +22,15 @@ class Message(ABC):
     #     }
     pass
 
+    def __str__(self) -> str:
+        return f'[{self.role.value}]: {self.content}'
+
+    def __repr__(self) -> str:
+        return f'''{{
+    'role': {self.role.value},
+    'content': {self.content}
+}}'''
+
 
 class SystemMessage(Message):
     role: MessageRole = MessageRole.SYSTEM
