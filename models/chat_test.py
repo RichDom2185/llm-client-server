@@ -2,7 +2,7 @@ from models.message import Message, UserMessage
 from models.observer import Observable, Observer
 
 
-class ChatClient(Observer, Observable):
+class TestChatClient(Observer, Observable):
     """
     Observer for received responses, Observable for sending requests
     """
@@ -30,11 +30,14 @@ class ChatClient(Observer, Observable):
     def notify(self) -> None:
         if not self.message_history:
             return
+        payload = self.message_history[-1]
+        print("Notifying with payload:", payload)
         for observer in self.message_handlers:
-            observer.on_update(self.message_history[-1])
+            observer.on_update(payload)
 
     # Overridden methods from Observer
     # (for receiving response messages)
 
     def on_update(self, payload) -> None:
+        print("Received update with payload:", payload)
         pass
