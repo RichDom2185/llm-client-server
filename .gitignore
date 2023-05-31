@@ -1,9 +1,12 @@
 # Virtual environment
-llm-env/
+/llm-env/
 
 # Editor configurations
-.idea/
-.vscode/
+/.idea/
+/.vscode/
 
 # Environment variables
-.env
+/.env
+
+# Compiled Python cache files
+__pycache__/
