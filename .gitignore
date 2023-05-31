@@ -1,2 +1,9 @@
 # Virtual environment
 llm-env/
+
+# Editor configurations
+.idea/
+.vscode/
+
+# Environment variables
+.env
