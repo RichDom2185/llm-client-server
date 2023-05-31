@@ -21,5 +21,5 @@ class Observable(ABC):
 
 class Observer(ABC):
     @abstractmethod
-    def update(self, subject: Observable) -> None:
+    def on_update(self, payload) -> None:
         pass
